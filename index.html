@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK HR Solutions</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #0056b3; color: white; padding: 1rem 0; text-align: center; }
+        nav { display: flex; justify-content: space-around; background-color: #333; color: white; padding: 0.5rem 0; }
+        nav a { color: white; text-decoration: none; }
+        .hero { background: #007bff; color: white; padding: 2rem; text-align: center; }
+        .hero h1 { margin: 0; }
+        .container { padding: 2rem; max-width: 800px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; background-color: #28a745; color: white; border-radius: 5px; text-decoration: none; margin-top: 1rem; border: none; cursor: pointer; }
+        .btn:hover { background-color: #218838; }
+        form { margin-top: 1rem; }
+        label { display: block; margin: 0.5rem 0 0.2rem; }
+        input[type="text"], input[type="tel"], input[type="email"], select { width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px; }
+        .upload-area { border: 2px dashed #007bff; padding: 2rem; text-align: center; color: #007bff; border-radius: 8px; cursor: pointer; margin-bottom: 1rem; }
+        .payment-qr { text-align: center; margin: 1rem 0; }
+        .payment-qr img { max-width: 200px; }
+        .job-card { background: #f8f9fa; border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; }
+        .job-card h3 { margin: 0 0 0.5rem 0; }
+        .job-card p { margin: 0.2rem 0; }
+        .admin-section { margin-top: 2rem; border-top: 2px solid #333; padding-top: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SRK HR Solutions</h1>
+    <p>നിങ്ങളുടെ തൊഴിൽ സ്വപ്നങ്ങൾ സക്ഷാത്കരിക്കുക</p>
+</header>
+
+<nav>
+    <a href="#home">ഹോം</a>
+    <a href="#jobs">ലഭ്യമായ ജോലികൾ</a>
+    <a href="#login">ലോഗിൻ</a>
+</nav>
+
+<div id="home" class="hero">
+    <h1>ജോലിക്ക് അപേക്ഷിക്കാം</h1>
+    <p>എളുപ്പത്തിൽ ജോലി കണ്ടെത്താൻ രജിസ്റ്റർ ചെയ്യുക</p>
+</div>
+
+<div class="container">
+    <div id="login">
+        <h2>ലോഗിൻ / രജിസ്ട്രേഷൻ</h2>
+        <form>
+            <label for="name">പേര്:</label>
+            <input type="text" id="name" required placeholder="പൂർണ്ണമായ പേര്">
+            
+            <label for="phone">മൊബൈൽ നമ്പർ:</label>
+            <input type="tel" id="phone" required placeholder="മൊബൈൽ നമ്പർ">
+            
+            <button type="button" class="btn" onclick="document.getElementById('otp-section').style.display='block'">OTP നേടുക</button>
+        </form>
+    </div>
+
+    <div id="otp-section" style="display:none; margin-top: 1rem;">
+        <form>
+            <label for="otp">OTP നൽകുക:</label>
+            <input type="text" id="otp" placeholder="OTP അടിക്കുക" required>
+            
+            <label for="email">ഇമെയിൽ വിലാസം:</label>
+            <input type="email" id="email" required placeholder="നിങ്ങളുടെ ഇമെയിൽ">
+
+            <button type="button" class="btn" onclick="document.getElementById('profile-section').style.display='block'">OTP വെരിഫൈ ചെയ്യുക</button>
+        </form>
+    </div>
+
+    <div id="profile-section" style="display:none; margin-top: 1rem;">
+        <h2>വിദ്യാഭ്യാസ യോഗ്യതയും സി.വി-യും</h2>
+        <form>
+            <label for="qualification">വിദ്യാഭ്യാസ യോഗ്യത:</label>
+            <input type="text" id="qualification" placeholder="യോഗ്യത നൽകുക" required>
+
+            <label for="city">ഏത് സിറ്റിയിലാണ് ജോലി വേണ്ടത്:</label>
+            <select id="city">
+                <option value="kochi">കൊച്ചി</option>
+                <option value="bengaluru">ബാംഗ്ലൂർ</option>
+            </select>
+            
+            <div class="upload-area" onclick="alert('സി.വി അപ്‌ലോഡ് ചെയ്യേണ്ട ഏരിയ')">
+                <p>സി.വി (Resume) അപ്‌ലോഡ് ചെയ്യുക (PDF/Word)</p>
+            </div>
+
+            <button type="button" class="btn" onclick="document.getElementById('payment-section').style.display='block'">അടുത്തത് (Next)</button>
+        </form>
+    </div>
+
+    <div id="payment-section" style="display:none; margin-top: 1rem;">
+        <h2>രജിസ്ട്രേഷൻ ഫീസ് പേയ്മെന്റ്</h2>
+        <p>രജിസ്ട്രേഷൻ ഫീസ്: ₹49</p>
+        <div class="payment-qr">
+            <p>QR കോഡ് സ്കാൻ ചെയ്ത് പണം അടയ്ക്കുക:</p>
+            <img src="https://via.placeholder.com/200?text=QR+Code+Here" alt="QR Code">
+        </div>
+        <form>
+            <label for="payment-status">പേയ്മെന്റ് സ്റ്റാറ്റസ്:</label>
+            <input type="text" id="payment-status" readonly value="Success">
+            <button type="button" class="btn" onclick="document.getElementById('jobs-section').style.display='block'">പേയ്മെന്റ് പൂർത്തിയാക്കി</button>
+        </form>
+    </div>
+
+    <div id="jobs-section" style="display:none; margin-top: 1rem;">
+        <h2>അവൈലബിൾ ജോബ്സ്</h2>
+        <div class="job-card">
+            <h3>Fire & Safety Officer</h3>
+            <p>കമ്പനി: അഡ്വാൻസ്ഡ് സേഫ്റ്റി ലിമിറ്റഡ്</p>
+            <p>സ്ഥലം: കൊച്ചി</p>
+            <p>ശമ്പളം: ₹25,000 - ₹30,000</p>
+            <button class="btn" onclick="alert('ബാക്ക് ഓഫീസിലേക്ക് നോട്ടിഫിക്കേഷൻ അയച്ചു')">Apply Now</button>
+        </div>
+        
+        <div class="job-card">
+            <h3>Lift Technician</h3>
+            <p>കമ്പനി: എലിവേറ്റ് ടെക് സൊല്യൂഷൻസ്</p>
+            <p>സ്ഥലം: ബാംഗ്ലൂർ</p>
+            <p>ശമ്പളം: ₹20,000 - ₹25,000</p>
+            <button class="btn" onclick="alert('ബാക്ക് ഓഫീസിലേക്ക് നോട്ടിഫിക്കേഷൻ അയച്ചു')">Apply Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="container admin-section">
+    <h2>എച്ച്.ആർ അഡ്മിൻ ഡാഷ്‌ബോർഡ്</h2>
+    <form>
+        <label>അഡ്മിൻ ലോഗിൻ പാസ്‌വേഡ്:</label>
+        <input type="text" id="admin-password" placeholder="പാസ്‌വേഡ് നൽകുക">
+        <button type="button" class="btn">ലോഗിൻ</button>
+    </form>
+
+    <div style="margin-top: 1rem;">
+        <h3>ലഭിച്ച അപേക്ഷകർ</h3>
+        <table>
+            <tr>
+                <th>പേര്</th>
+                <th>ജോലി</th>
+                <th>സ്റ്റാറ്റസ്</th>
+                <th>ആക്ഷൻ</th>
+            </tr>
+            <tr>
+                <td>സൂരജ് കുടുക്കിൽ</td>
+                <td>Fire & Safety Officer</td>
+                <td>പെയ്ഡ് (₹49)</td>
+                <td><button onclick="alert('ഇന്റർവ്യൂ ഷെഡ്യൂൾ ചെയ്യാം')">ഇന്റർവ്യൂ ഷെഡ്യൂൾ ചെയ്യുക</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
